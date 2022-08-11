@@ -1,0 +1,24 @@
+scalar Upload
+
+
+type BioData {
+  id: Int!
+  name: String!
+  Age: Int!
+}
+
+input AddBio{
+  name: String!
+  Age: Int!
+}
+
+type Mutation{
+  CreateBio(input: AddBio!): BioData!
+  DeleteBio(id: Int!): String!
+  UpdateBio(id: Int!): String!
+}
+
+type Query {
+  GetBio(id: Int!): BioData!
+  GetBios: [BioData!]!
+}
